@@ -42,8 +42,8 @@ docker compose up --build -d
 - **메뉴 최적화**: 실무에서 사용하지 않는 메뉴를 제거하고 '대시보드 개요'와 '데이터 임포트'로 사이드바를 간소화하여 사용성을 높였습니다. 현재 페이지에 따른 활성화 상태(Active State)를 시각적으로 강조합니다.
 - **Optimistic UI (낙관적 업데이트)**: `PostManager` 컴포넌트에서 Insight 추가 시, 서버 응답 전에 UI에 먼저 반영합니다. 가짜 API(`lib/api.ts`)에서 의도적으로 에러를 발생시키며, 에러 발생 시 원래 상태로 롤백(Rollback)하는 엔지니어링을 구현했습니다.
 
-### 3. OpenAPI / Swagger 문서 및 UI (보너스 고도화)
-- 단순히 명세서(`swagger.yaml`)를 제공하는 것에 그치지 않고, `swagger-ui-react`를 활용하여 **브라우저에서 직접 확인할 수 있는 API 문서 페이지(`/api-docs`)**를 구축하였습니다. 사이드바 메뉴를 통해 접근 가능합니다.
+### 3. OpenAPI / Swagger 문서 (보너스)
+- `carbon-dashboard/public/swagger.yaml` 파일에 OpenAPI 명세서를 제공하여 API 확장 가능성을 열어두었습니다.
 
 ---
 

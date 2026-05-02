@@ -1,6 +1,6 @@
 "use client";
 
-import { BarChart3, FileSpreadsheet, Leaf, FileCode } from "lucide-react";
+import { BarChart3, FileSpreadsheet, Leaf } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -18,11 +18,6 @@ export function Sidebar() {
       name: "데이터 임포트",
       href: "/import",
       icon: FileSpreadsheet,
-    },
-    {
-      name: "API 문서 (Swagger)",
-      href: "/api-docs",
-      icon: FileCode,
     },
   ];
 
