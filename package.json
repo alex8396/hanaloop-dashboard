@@ -1,0 +1,10 @@
+{
+  "name": "hanaloop-workspace",
+  "private": true,
+  "scripts": {
+    "postinstall": "cd carbon-dashboard && npm install",
+    "dev": "cd carbon-dashboard && npm run dev",
+    "build": "cd carbon-dashboard && npm run build",
+    "start": "cd carbon-dashboard && npm run dev"
+  }
+}
