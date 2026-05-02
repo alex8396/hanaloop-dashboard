@@ -1,0 +1,92 @@
+openapi: 3.0.0
+info:
+  title: HanaLoop Carbon Emissions API
+  description: API for managing carbon emissions data, companies, and executive insights.
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000/api
+    description: Local development server
+paths:
+  /companies:
+    get:
+      summary: Retrieve all companies with their emissions
+      responses:
+        '200':
+          description: A list of companies
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company'
+  /posts:
+    get:
+      summary: Retrieve executive insights (posts)
+      responses:
+        '200':
+          description: A list of posts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Post'
+    post:
+      summary: Create a new insight
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostInput'
+      responses:
+        '201':
+          description: Post created successfully
+components:
+  schemas:
+    Company:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        country:
+          type: string
+        emissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/GhgEmission'
+    GhgEmission:
+      type: object
+      properties:
+        yearMonth:
+          type: string
+        source:
+          type: string
+        emissions:
+          type: number
+    Post:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        resourceUid:
+          type: string
+        dateTime:
+          type: string
+        content:
+          type: string
+    PostInput:
+      type: object
+      properties:
+        title:
+          type: string
+        resourceUid:
+          type: string
+        dateTime:
+          type: string
+        content:
+          type: string
